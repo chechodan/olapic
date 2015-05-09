@@ -2,7 +2,8 @@
 
 The project consists in providing a service to take the location of a photo or video from a social network.
 The service is accessed by the url 'media/{media_id}' where 'media_id' is the id of the photo or video required.
-It is necessary to add a parameter to the authorization called 'access_token'. This parameter is obtained after login to the social network involved.
+It is necessary to add a parameter to the authorization called 'access_token'. This parameter is obtained out of the application after login to the social network that you want to use.
+
 The type of social network involved can be added as optional parameter called 'network', for example network=instagram or network=facebook. By default this parameter is 'instagram'.
 So the request could be formed in the following ways:
 
@@ -40,11 +41,12 @@ The strategy is implemented via an interface (SocialMediaInterface), which defin
 The context was implemented in two classes. On the one hand, the SocialMediaNetwork class defines respective constants to social networks that were implemented. The method 'create_social_media', selects the algorithm to be used according to the parameter 'network' within the 'args' array passed by parameter in the function. The objective of this class is to be more easily add a new implementation. On the other hand, the context is defined in the SocialMedia class, which generalizes the method getLocation, and according to the social network, the correct algorithm is selected to run.
 
 Every algorithm could require different parameters to configure the process, so in the method 'getLocation' there is an optional parameter called args to this end, and in the constructor of the class, an arguments array is configured by default.
-It is important to note, that the implementation of facebook is not made. The class was added for use as an example in the Strategy pattern. So an exception is thrown when you try to use it.
+
+It is important to note, that the implementation of facebook is not made. The class was added for use as an example in the strategy pattern. So an exception is thrown when you try to use it.
 
 ## PHP Instagram API
 
-This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the module 'SocialMedia' for Instagram. The choice of this API is that it has functions to discover the location of media.
+This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the 'SocialMedia' module for Instagram. The choice of this API is that it has functions to discover the location of media.
 
 For more information, goto <https://github.com/galen/PHP-Instagram-API>
 
