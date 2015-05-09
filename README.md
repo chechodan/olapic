@@ -6,14 +6,14 @@ It is necessary to add a parameter to the authorization called 'access_token'. T
 The social network involved can be added as optional parameter called 'network', for example network=instagram or network=facebook. By default this parameter is 'instagram'.
 So the request could be formed in the following ways:
 
-`
+```
 instagram => GET media/12345?access_token=TOKEN 
 facebook  => GET media/12345?access_token=TOKEN&network=facebook
-`
+```
 
 The response will be in the following way:
 
-`
+```
 STATUS 200
 {
   "id": 12345,
@@ -24,12 +24,12 @@ STATUS 200
     }
   }
 }
-`
+```
 
 ## Silex Web Framework
 
 The silex web framework was used for this project. It was organised in such a way that use the controller provider, to handle the request with the 'media' route. This controller is located in the file 'app/Olapic/Controller/MediaControllerProvider.php'. The reason for this controller is to keep the code clean and with a structure that will allow us to extend and scale the project.
-For more information you can access the official website [http://silex.sensiolabs.org/)](http://silex.sensiolabs.org/).
+For more information you can access the official website <http://silex.sensiolabs.org/>.
 
 ## SocialMedia
 
@@ -43,14 +43,14 @@ It is important to note, that the implementation of facebook is not made. The cl
 
 This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the module 'SocialMedia' for Instagram. The choice of this API is that it has functions to discover the location of media.
 
-For more information, goto [(https://github.com/galen/PHP-Instagram-API](https://github.com/galen/PHP-Instagram-API)
+For more information, goto <https://github.com/galen/PHP-Instagram-API>
 
 ## Configuration on Debian
 
 You need to configure apache and domain name, as follows:
 
-1. In the file '/etc/hosts' add the following line '127.0.0.1 olapic'
-2. In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
+* In the file '/etc/hosts' add the following line '127.0.0.1 olapic'
+* In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
 
 ```
 <VirtualHost *:80>
@@ -62,16 +62,16 @@ You need to configure apache and domain name, as follows:
 </VirtualHost>
 ```
 
-⋅⋅⋅Then restart the apache server:
+Then restart the apache server:
 
-⋅⋅⋅$ sudo service apache2 restart
+`sudo service apache2 restart`
 
-3. Composer must be installed in the project folder:
+* Composer must be installed in the project folder:
 
-⋅⋅⋅$ curl -sS https://getcomposer.org/installer | php
+  `curl -sS https://getcomposer.org/installer | php`
 
-⋅⋅⋅Then install dependencies:
+  Then install dependencies:
 
-⋅⋅⋅$ php composer.phar install
+  `php composer.phar install`
 
 Done! In the browser go to olapic/media/{media_id}?access_token={TOKEN}&network={instagram|facebook} (The network parameter is optional, default is 'instagram').
