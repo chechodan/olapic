@@ -1,5 +1,11 @@
 {
   "require": {
-    "silex/silex": "~1.2"
+    "silex/silex": "~1.2",
+    "php-instagram-api/php-instagram-api": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "Olapic": "app/"
+    }
   }
 }

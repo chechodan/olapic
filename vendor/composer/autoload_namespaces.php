@@ -14,4 +14,6 @@ return array(
     'Silex' => array($vendorDir . '/silex/silex/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Pimple' => array($vendorDir . '/pimple/pimple/lib'),
+    'Olapic' => array($baseDir . '/app'),
+    'Instagram' => array($vendorDir . '/php-instagram-api/php-instagram-api'),
 );
