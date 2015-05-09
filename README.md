@@ -52,7 +52,7 @@ You need to configure apache and domain name, as follows:
 * In the file '/etc/hosts' add the following line '127.0.0.1 olapic'
 * In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
 
-```
+  ```
   <VirtualHost *:80>
     DocumentRoot "/var/www/html/olapic/web"
     ServerName olapic
@@ -60,7 +60,7 @@ You need to configure apache and domain name, as follows:
       AllowOverride All
     </Directory>
   </VirtualHost>
-```
+  ```
 
   Then restart the apache server:
 
