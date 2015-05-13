@@ -27,6 +27,18 @@ STATUS 200
 }
 ```
 
+## Requirements
+
+* php 5.4+
+* apache 2.2.16+
+
+## Run project 
+
+`php -S localhost:8080 -t web web/index.php`
+
+Now the application should be running at <http://localhost:8080>.
+For other ways to start the application refer to the following [link](http://silex.sensiolabs.org/doc/web_servers.html)
+
 ## Silex Web Framework
 
 The silex web framework was used for this project. It was organised in such a way that use the controller provider, to handle the request with the 'media' route. This controller is located in the file 'app/Olapic/Controller/MediaControllerProvider.php'. The reason for this controller is to keep the code clean and with a structure that will allow us to extend and scale the project.
@@ -49,6 +61,10 @@ It is important to note, that the implementation of facebook is not made. The cl
 This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the 'SocialMedia' module for Instagram. The choice of this API is that it has functions to discover the location of media.
 
 For more information, goto <https://github.com/galen/PHP-Instagram-API>
+
+## Testing
+
+To run the test, you must configure the class "MediaTest" and add the access token. Then run the command "./app/phpunit - c app/" to start the test.
 
 ## Configuration on Debian
 
