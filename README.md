@@ -81,6 +81,12 @@ Done! In the browser goto:
 The silex web framework was used for this project. It was organised in such a way that use the controller provider, to handle the request with the 'media' route. This controller is located in the file 'app/Olapic/Controller/MediaControllerProvider.php'. The reason for this controller is to keep the code clean and with a structure that will allow us to extend and scale the project.
 For more information you can access the official website <http://silex.sensiolabs.org/>.
 
+## PHP Instagram API
+
+This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the 'SocialMedia' module for Instagram. The choice of this API is that it has functions to discover the location of media.
+
+For more information, goto <https://github.com/galen/PHP-Instagram-API>
+
 ## SocialMedia
 
 'SocialMedia' is a module created with the [Strategy pattern](http://en.wikipedia.org/wiki/Strategy_pattern), to allow different implementations according to the social network, to obtain the location of a photo or video.
@@ -92,9 +98,3 @@ The context was implemented in two classes. On the one hand, the SocialMediaNetw
 Every algorithm could require different parameters to configure the process, so in the method 'getLocation' there is an optional parameter called args to this end, and in the constructor of the class, an arguments array is configured by default.
 
 It is important to note, that the implementation of facebook is not made. The class was added for use as an example in the strategy pattern. So an exception is thrown when you try to use it.
-
-## PHP Instagram API
-
-This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the 'SocialMedia' module for Instagram. The choice of this API is that it has functions to discover the location of media.
-
-For more information, goto <https://github.com/galen/PHP-Instagram-API>
