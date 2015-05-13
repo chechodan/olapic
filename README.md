@@ -74,7 +74,7 @@ You need to configure apache and domain name, as follows:
 
 Done! In the browser goto: 
 
-`<olapic/media/{media_id}?access_token={TOKEN}&network={instagram|facebook}> (The network parameter is optional, default is 'instagram').`
+`olapic/media/{media_id}?access_token={TOKEN}&network={instagram|facebook} (The network parameter is optional, default is 'instagram').`
 
 ## Silex Web Framework
 
