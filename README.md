@@ -12,7 +12,7 @@ instagram => GET media/12345?access_token=TOKEN
 facebook  => GET media/12345?access_token=TOKEN&network=facebook
 ```
 
-The response will be in the following way:
+The successful response will be in the following way:
 
 ```
 STATUS 200
@@ -24,6 +24,15 @@ STATUS 200
       "longitude": -71.9256
     }
   }
+}
+```
+
+The unsuccessful response will be in the following way:
+
+```
+STATUS 404
+{
+  "message": "reason for the failure"
 }
 ```
 
