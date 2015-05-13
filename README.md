@@ -32,7 +32,7 @@ The unsuccessful response will be in the following way:
 ```
 STATUS 404
 {
-  "message": "reason for the failure"
+  "message": "reason for the failure."
 }
 ```
 
@@ -43,9 +43,11 @@ STATUS 404
 
 ## Run project 
 
-`php -S localhost:8080 -t web web/index.php`
+To start the application run **start.sh** script.
 
-Now the application should be running at <http://localhost:8080>.
+Now the application should be running at <http://localhost:8080/media/{MEDIA_ID}?access_token={ACCESS_TOKEN}>. 
+This server is for development only. It is not recommended to use it in production.
+
 For other ways to start the application refer to the following [link](http://silex.sensiolabs.org/doc/web_servers.html)
 
 ## Testing
@@ -57,7 +59,8 @@ To run the test, you must configure the class "MediaTest" and add the access tok
 You need to configure apache and domain name, as follows:
 
 * In the file '/etc/hosts' add the following line '127.0.0.1 olapic'
-* In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
+* Configure apache server: 
+** In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
 
   ```
   <VirtualHost *:80>
@@ -69,9 +72,13 @@ You need to configure apache and domain name, as follows:
   </VirtualHost>
   ```
 
-  Then restart the apache server:
+** Enable Apache 'mod_rewrite' module:
 
-  `sudo service apache2 restart`
+    `sudo a2enmod rewrite`
+
+** Then restart the apache server:
+
+    `sudo service apache2 restart`
 
 * Composer must be installed in the project folder:
 
