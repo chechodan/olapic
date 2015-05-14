@@ -7,14 +7,14 @@ It is necessary to add a parameter to the authorization called 'access_token'. T
 The type of social network involved can be added as optional parameter called 'network', for example network=instagram or network=facebook. By default this parameter is 'instagram'.
 So the request could be formed in the following ways:
 
-If the access token is configured:
+* If the access token is configured
 
 ```
 instagram => GET media/12345
 facebook  => GET media/12345?network=facebook
 ```
 
-If the access token is not configured:
+* If the access token is not configured:
 
 ```
 instagram => GET media/12345?access_token=TOKEN 
