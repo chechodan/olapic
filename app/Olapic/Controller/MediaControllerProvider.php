@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Olapic\SocialMedia\SocialMedia;
 
 class MediaControllerProvider implements ControllerProviderInterface {
-  const MESSAGE_ACCESS_TOKEN_INVALID = "The access_token provided is invalid.";
   const MESSAGE_LOCATION_NOT_FOUND   = "The location was not found.";
   const MESSAGE_MEDIA_ID_NOT_FOUND   = "The media id was not found."; 
 
@@ -19,14 +18,7 @@ class MediaControllerProvider implements ControllerProviderInterface {
 
     $controllers->get('/', "Olapic\\Controller\\MediaControllerProvider::index");
 
-    $controllers->get('/{media_id}',  "Olapic\\Controller\\MediaControllerProvider::getLocation")
-      ->before(function(Request $request, Application $app){
-        $access_token = trim($request->get("access_token"));          
-
-        if(!isset($access_token) || empty($access_token)){
-          return $app->json(array("message" => self::MESSAGE_ACCESS_TOKEN_INVALID), 404);
-        }
-      });
+    $controllers->get('/{media_id}',  "Olapic\\Controller\\MediaControllerProvider::getLocation");
 
     return $controllers;
   }
@@ -36,7 +28,8 @@ class MediaControllerProvider implements ControllerProviderInterface {
   }
 
   function getLocation(Application $app, Request $request, $media_id) {
-    $arg["access_token"] = $request->query->get('access_token');
+    $access_token = trim($request->query->get('access_token'));
+    $arg["access_token"] = ($access_token) ? $access_token : $app["access_token"];
     $arg["network"] = $request->query->get('network');
     $msg = self::MESSAGE_LOCATION_NOT_FOUND;
     $location = false;

@@ -10,8 +10,8 @@
          syntaxCheck="false">
 
   <testsuites>
-    <testsuite name="Olapic Test Suite">
-      <directory>./Olapic/Test/</directory>
+    <testsuite name="Olapic Media Test Suite">
+      <directory>./../app/Olapic/Test/</directory>
     </testsuite>         
   </testsuites>
 </phpunit>

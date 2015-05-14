@@ -5,19 +5,22 @@ FILE_CONFIG="$DIR_CONFIG/config.sh"
 
 source $FILE_CONFIG
 
-PHP=$(get_command "php")
+view_header "The test."
 
-view_header "locahost:8080/media/{MEDIA_ID}?access_token={ACCESS_TOKEN}"
+if [ ! -f $PHPUNIT ];then
+  echo "Command phpunit not found. Run install.sh."
+  exit 1;  
+fi;
 
 if [ ! -f $FILE_ACCESS_TOKEN ];then
   enter_access_token
   echo
 fi;
-
+  
 view_access_token
 
 echo
 
-$PHP -S $HOST:$PORT -c $INIFILE -t $DOCROOT $ROUTER
+$PHPUNIT -c $PATH_ROOT
 
 view_footer

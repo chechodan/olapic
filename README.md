@@ -41,6 +41,18 @@ STATUS 404
 * php 5.4+
 * apache 2.2.16+
 
+## Installation
+
+To install the application run the **install.sh** command. This script will install 'composer' and its dependencies to run the application and testing.
+The command **update.sh** refresh the 'composer' dependencies.
+The command **uninstall.sh** deletes 'composer.phar' file and 'vendor' folder.
+
+## Access Token
+
+The access token is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token.
+Another alternative may be to use **update_access_token.sh** command.
+To see the value of the access token, you can use **view_access_token.sh** command
+
 ## Run project 
 
 To start the application run **start.sh** script.
@@ -52,7 +64,7 @@ For other ways to start the application refer to the following [link](http://sil
 
 ## Testing
 
-To run the test, you must configure the class "MediaTest" and add the access token. Then run the command "./app/phpunit - c app/" to start the test.
+To start the test run **testing.sh**.
 
 ## Configuration on Debian
 
