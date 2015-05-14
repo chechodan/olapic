@@ -7,6 +7,15 @@ It is necessary to add a parameter to the authorization called 'access_token'. T
 The type of social network involved can be added as optional parameter called 'network', for example network=instagram or network=facebook. By default this parameter is 'instagram'.
 So the request could be formed in the following ways:
 
+If the access token is configured:
+
+```
+instagram => GET media/12345
+facebook  => GET media/12345?network=facebook
+```
+
+If the access token is not configured:
+
 ```
 instagram => GET media/12345?access_token=TOKEN 
 facebook  => GET media/12345?access_token=TOKEN&network=facebook
@@ -49,7 +58,7 @@ The command **uninstall.sh** deletes 'composer.phar' file and 'vendor' folder.
 
 ## Access Token
 
-The access token is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token. It is possible to assign a blank value, but we will have to add the parameter with the url.
+The access token is the key that gives you instagram to connect to the api. It is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token. It is possible to assign a blank value, but we will have to add the parameter within the url.
 Another alternative may be to use **update_access_token.sh** command.
 To see the value of the access token, you can use **view_access_token.sh** command.
 
