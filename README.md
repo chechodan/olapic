@@ -49,9 +49,9 @@ The command **uninstall.sh** deletes 'composer.phar' file and 'vendor' folder.
 
 ## Access Token
 
-The access token is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token.
+The access token is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token. It is possible to assign a blank value, but we will have to add the parameter with the url.
 Another alternative may be to use **update_access_token.sh** command.
-To see the value of the access token, you can use **view_access_token.sh** command
+To see the value of the access token, you can use **view_access_token.sh** command.
 
 ## Run project 
 
