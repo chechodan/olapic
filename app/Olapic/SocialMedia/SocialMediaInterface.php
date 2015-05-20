@@ -2,8 +2,9 @@
 
 namespace Olapic\SocialMedia;
 
-interface SocialMediaInterface {
-  public function getLocation($media_id, $arg = array());
+interface SocialMediaInterface 
+{
+    public function getLocation($media_id, $arg = array());
 }
 
 ?>

@@ -2,26 +2,28 @@
 
 namespace Olapic\SocialMedia;
 
-class SocialMediaNetwork {
-  const INSTAGRAM = "instragram";
-  const FACEBOOK = "facebook";
+class SocialMediaNetwork 
+{
+    const INSTAGRAM = "instragram";
+    const FACEBOOK = "facebook";
 
-  static public function create_social_media($arg) {
-    $social_media = false;
-    $network = isset($arg[SocialMedia::PARAM_NETWORK]) ? $arg[SocialMedia::PARAM_NETWORK] : false;
+    public static function createSocialMedia($arg) {
+        $social_media = false;
+        $network = isset($arg[SocialMedia::PARAM_NETWORK]) ? 
+                         $arg[SocialMedia::PARAM_NETWORK] : false;
  
-    switch($network) {
-      case self::FACEBOOK:
-        $social_media = new FacebookSocialMedia($arg);
-        break;
-      case self::INSTAGRAM:
-      default:
-        $social_media = new InstagramSocialMedia($arg);
-        break;
-    }
+        switch ($network) {
+            case self::FACEBOOK:
+                $social_media = new FacebookSocialMedia($arg);
+                break;
+            case self::INSTAGRAM:
+            default:
+                $social_media = new InstagramSocialMedia($arg);
+                break;
+        }
 
-    return $social_media;
-  }
+        return $social_media;
+    }
 }
 
 ?>

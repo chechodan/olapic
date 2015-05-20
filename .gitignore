@@ -1,3 +1,5 @@
 composer.lock
 composer.phar
 vendor/
+config/.instagram_access_token.key
+config/.facebook_access_token.key

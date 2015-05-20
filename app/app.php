@@ -11,7 +11,7 @@ $app = new Silex\Application();
 $app['debug'] = false;
 
 $app->get('/', function () use($app) {
-  return $app->redirect('/media');
+    return $app->redirect('/media');
 });
   
 $app->mount('/media', new Olapic\Controller\MediaControllerProvider()); 
@@ -20,5 +20,3 @@ $app[FacebookSocialMedia::PARAM_ACCESS_TOKEN]  = FACEBOOK_ACCESS_TOKEN;
 $app[InstagramSocialMedia::PARAM_ACCESS_TOKEN] = INSTAGRAM_ACCESS_TOKEN;
 
 return $app;
-
-?>
