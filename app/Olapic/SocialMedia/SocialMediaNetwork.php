@@ -8,7 +8,7 @@ class SocialMediaNetwork {
 
   static public function create_social_media($arg) {
     $social_media = false;
-    $network = isset($arg['network']) ? $arg['network'] : false;
+    $network = isset($arg[SocialMedia::PARAM_NETWORK]) ? $arg[SocialMedia::PARAM_NETWORK] : false;
  
     switch($network) {
       case self::FACEBOOK:

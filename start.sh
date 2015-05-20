@@ -9,10 +9,7 @@ PHP=$(get_command "php")
 
 view_header "locahost:8080/media/{MEDIA_ID}?access_token={ACCESS_TOKEN}"
 
-if [ ! -f $FILE_ACCESS_TOKEN ];then
-  enter_access_token
-  echo
-fi;
+check_access_token
 
 view_access_token
 

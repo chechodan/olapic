@@ -12,10 +12,7 @@ if [ ! -f $PHPUNIT ];then
   exit 1;  
 fi;
 
-if [ ! -f $FILE_ACCESS_TOKEN ];then
-  enter_access_token
-  echo
-fi;
+check_access_token
   
 view_access_token
 

@@ -28,6 +28,13 @@ STATUS 200
 {
   "id": 12345,
   "location": {
+    "street": "",
+    "city": "Leicester",
+    "state": "MA",
+    "country": "United States",
+    "zip": "",
+    "latitude": 42.277244282926,
+    "longitude": -71.922250706769
     "geopoint": {
       "latitude": 42.277,
       "longitude": -71.9256
@@ -58,7 +65,7 @@ The command **uninstall.sh** deletes 'composer.phar' file and 'vendor' folder.
 
 ## Access Token
 
-The access token is the key that gives you instagram to connect to the api. It is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token. It is possible to assign a blank value, but we will have to add the parameter within the url.
+The access token is the key that gives you instagram and facebook to connect to the api. It is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token. It is possible to assign a blank value, but we will have to add the parameter within the url.
 Another alternative may be to use **update_access_token.sh** command.
 
 To see the value of the access token, you can use **view_access_token.sh** command.
@@ -67,7 +74,7 @@ To see the value of the access token, you can use **view_access_token.sh** comma
 
 To start the application run **start.sh** script.
 
-Now the application should be running at <http://localhost:8080/media/{MEDIA_ID}?access_token={ACCESS_TOKEN}>. 
+Now the application should be running at <http://localhost:8080/media/{MEDIA_ID}>. 
 This server is for development only. It is not recommended to use it in production.
 
 For other ways to start the application refer to the following [link](http://silex.sensiolabs.org/doc/web_servers.html)
@@ -124,6 +131,10 @@ For more information you can access the official website <http://silex.sensiolab
 This is a PHP 5.3+ API wrapper for the Instagram API. This api was used to implement the concrete strategy of the 'SocialMedia' module for Instagram. The choice of this API is that it has functions to discover the location of media.
 
 For more information, goto <https://github.com/galen/PHP-Instagram-API>
+
+## Facebook API
+
+For more information about the place we use the facebook api. This is responsible for returning the site description more close to 100 km. Because of this the response has two coordinates.
 
 ## SocialMedia
 
