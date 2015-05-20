@@ -34,13 +34,13 @@ class FacebookMediaTest extends MediaTest
     public function testEmptyAllAccessToken()
     {
         $access_token = "";
-        $facebook_access_token  = $this->app[self::$_facebook_access_token];
+        $facebook_access_token  = $this->app[self::$s_facebook_access_token];
 
         try {
-            $this->app[self::$_facebook_access_token]="";
+            $this->app[self::$s_facebook_access_token]="";
             $response = $this->getResponse($this->media_id, $access_token); 
         } finally {
-            $this->app[self::$_facebook_access_token] = $facebook_access_token;
+            $this->app[self::$s_facebook_access_token] = $facebook_access_token;
         }
           
         $this->assertJsonMessage($response);

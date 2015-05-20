@@ -12,21 +12,21 @@ class SocialMediaNetworkTest extends MediaTest
 {
     public function testCreateSocialMediaEmptyParam()
     {
-        $social = SocialMediaNetwork::create_social_media(false);
+        $social = SocialMediaNetwork::createSocialMedia(false);
 
         $this->assertTrue($social instanceof InstagramSocialMedia);
     }
 
     public function testCreateSocialMediaEmptyArray()
     {
-        $social = SocialMediaNetwork::create_social_media(array());
+        $social = SocialMediaNetwork::createSocialMedia(array());
 
         $this->assertTrue($social instanceof InstagramSocialMedia);
     }
   
     public function testCreateSocialMediaInstagram()
     {
-        $social = SocialMediaNetwork::create_social_media(
+        $social = SocialMediaNetwork::createSocialMedia(
             array(SocialMedia::PARAM_NETWORK => SocialMediaNetwork::INSTAGRAM)
         );
 
@@ -35,7 +35,7 @@ class SocialMediaNetworkTest extends MediaTest
   
     public function testCreateSocialMediaFacebook()
     {
-        $social = SocialMediaNetwork::create_social_media(
+        $social = SocialMediaNetwork::createSocialMedia(
             array(SocialMedia::PARAM_NETWORK => SocialMediaNetwork::FACEBOOK)
         );
 
