@@ -33,13 +33,13 @@ class MediaControllerProvider implements ControllerProviderInterface
         return $controllers;
     }
 
-    function index(Application $app) 
+    public function index(Application $app) 
     {
         return $app->json(array("message" => 
                      self::MESSAGE_MEDIA_ID_NOT_FOUND), 404);
     }
 
-    function getLocation(
+    public function getLocation(
                        Application $app, 
                        Request $request, 
                        $media_id, 
