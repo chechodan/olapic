@@ -57,22 +57,36 @@ STATUS 404
 * php 5.4+
 * apache 2.2.16+
 
+## Tools
+
+In the folder tools there are script which help us to manage the project. The tools must always be used from the path of the project. For example:
+
+* start project
+
+   `./tools/start.sh`
+
+* testing
+
+    `./tools/testing.sh`
+
+always add the folder tools in the call.
+
 ## Installation
 
-To install the application run the **install.sh** command. This script will install 'composer' and its dependencies to run the application and testing.
-The command **update.sh** refresh the 'composer' dependencies.
-The command **uninstall.sh** deletes 'composer.phar' file and 'vendor' folder.
+To install the application run the **./tools/install.sh** command. This script will install 'composer' and its dependencies to run the application and testing.
+The command **./tools/update.sh** refresh the 'composer' dependencies.
+The command **./tools/uninstall.sh** deletes 'composer.phar' file and 'vendor' folder.
 
 ## Access Token
 
 The access token is the key that gives you instagram and facebook to connect to the api. It is required to run the application and testing. Then, when these commands are executed, requested them to enter the access token. It is possible to assign a blank value, but we will have to add the parameter within the url.
-Another alternative may be to use **update_access_token.sh** command.
+Another alternative may be to use **./tools/update_access_token.sh** command.
 
-To see the value of the access token, you can use **view_access_token.sh** command.
+To see the value of the access token, you can use **./tools/view_access_token.sh** command.
 
 ## Run project 
 
-To start the application run **start.sh** script.
+To start the application run **./tools/start.sh** script.
 
 Now the application should be running at <http://localhost:8080/media/{MEDIA_ID}>. 
 This server is for development only. It is not recommended to use it in production.
@@ -81,7 +95,7 @@ For other ways to start the application refer to the following [link](http://sil
 
 ## Testing
 
-To start the test run **testing.sh**.
+To start the test run **./tools/testing.sh**.
 
 ## Configuration on Debian
 
@@ -142,7 +156,7 @@ For more information about the place we use the facebook api. This is responsibl
 
 The strategy is implemented via an interface (SocialMediaInterface), which defines a getLocation method. This method is the algorithm that must be implemented in concrete strategies, according to the respective social network. For example for instagram, was implemented the interface in the InstagramSocialMedia class, and for facebook, it was implemented in the FacebookSocialMedia class.
 
-The context was implemented in two classes. On the one hand, the SocialMediaNetwork class defines respective constants to social networks that were implemented. The method 'create_social_media', selects the algorithm to be used according to the parameter 'network' within the 'args' array passed by parameter in the function. The objective of this class is to be more easily add a new implementation. On the other hand, the context is defined in the SocialMedia class, which generalizes the method getLocation, and according to the social network, the correct algorithm is selected to run.
+The context was implemented in two classes. On the one hand, the SocialMediaNetwork class defines respective constants to social networks that were implemented. The method 'createSocialMedia', selects the algorithm to be used according to the parameter 'network' within the 'args' array passed by parameter in the function. The objective of this class is to be more easily add a new implementation. On the other hand, the context is defined in the SocialMedia class, which generalizes the method getLocation, and according to the social network, the correct algorithm is selected to run.
 
 Every algorithm could require different parameters to configure the process, so in the method 'getLocation' there is an optional parameter called args to this end, and in the constructor of the class, an arguments array is configured by default.
 
