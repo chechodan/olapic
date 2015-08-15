@@ -1,6 +1,9 @@
 <?php
 /**
  * This file is the input of the application.
+ * 
+ * @copyright 2015 Sergio Liendo
+ * @author Sergio Liendo
  */
  
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);

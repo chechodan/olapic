@@ -4,7 +4,11 @@ use Olapic\SocialMedia\FacebookSocialMedia;
 
 /**
  * The silex application is configured in this file.
+ * 
+ * @copyright 2015 Sergio Liendo
+ * @author Sergio Liendo
  */
+ 
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 

@@ -1,6 +1,9 @@
 <?php
 /**
  * This file defines the constants on the token access to social networks.
+ * 
+ * @copyright 2015 Sergio Liendo
+ * @author Sergio Liendo
  */
  
 /**
