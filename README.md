@@ -17,8 +17,8 @@ facebook  => GET media/12345?network=facebook
 * If the access token is not configured:
 
 ```
-instagram => GET media/12345?access_token=TOKEN 
-facebook  => GET media/12345?access_token=TOKEN&network=facebook
+instagram => GET media/12345?access_token={TOKEN} 
+facebook  => GET media/12345?access_token={TOKEN}&network=facebook
 ```
 
 The successful response will be in the following way:
@@ -68,6 +68,9 @@ In the folder tools there are script which help us to manage the project. The to
 * testing
 
     `./tools/testing.sh`
+    
+* phpdoc
+    `./tools/phpdoc.sh`
 
 always add the folder tools in the call.
 
@@ -103,7 +106,8 @@ You need to configure apache and domain name, as follows:
 
 * In the file '/etc/hosts' add the following line '127.0.0.1 olapic'
 * Configure apache server: 
-** In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
+
+    1. In the file '/etc/apache2/sites-available/000-default.conf' add the following lines:
 
   ```
   <VirtualHost *:80>
@@ -115,13 +119,13 @@ You need to configure apache and domain name, as follows:
   </VirtualHost>
   ```
 
-** Enable Apache 'mod_rewrite' module:
+    2. Enable Apache 'mod_rewrite' module:
 
-    `sudo a2enmod rewrite`
+        `sudo a2enmod rewrite`
 
-** Then restart the apache server:
+    3. Then restart the apache server:
 
-    `sudo service apache2 restart`
+        `sudo service apache2 restart`
 
 * Composer must be installed in the project folder:
 

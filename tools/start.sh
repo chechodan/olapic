@@ -7,7 +7,7 @@ source $FILE_CONFIG
 
 PHP=$(get_command "php")
 
-view_header "locahost:8080/media/{MEDIA_ID}?access_token={ACCESS_TOKEN}"
+view_header "$HOST:$PORT/media/{MEDIA_ID}?access_token={ACCESS_TOKEN}"
 
 check_access_token
 

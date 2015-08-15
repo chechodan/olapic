@@ -4,14 +4,22 @@
 
 DIR_ROOT="$DIR_CONFIG/.."
 DIR_VENDOR="$DIR_ROOT/vendor"
+
 INSTAGRAM_ACCESS_TOKEN="$DIR_CONFIG/.instagram_access_token.key"
 FACEBOOK_ACCESS_TOKEN="$DIR_CONFIG/.facebook_access_token.key"
 COMPOSER="$DIR_ROOT/composer.phar"
 URL_COMPOSER="https://getcomposer.org/installer"
 
+# phpdoc.sh
+
+PHPDOC="$DIR_ROOT/vendor/bin/phpdoc"
+PHPDOC_INPUT="$DIR_ROOT"
+PHPDOC_OUTPUT="$DIR_ROOT/docs/api"
+PHPDOC_IGNORE="$DIR_ROOT/vendor/"
+
 # testing.sh
 
-PHPUNIT="$DIR_ROOT/vendor/phpunit/phpunit/phpunit"
+PHPUNIT="$DIR_ROOT/vendor/bin/phpunit"
 PATH_ROOT="$DIR_CONFIG"
 
 # start.sh
@@ -19,7 +27,7 @@ PATH_ROOT="$DIR_CONFIG"
 INIFILE="$DIR_CONFIG/php.ini"
 DOCROOT="$DIR_ROOT/web";
 ROUTER="$DOCROOT/index.php";
-HOST=0.0.0.0
+HOST=localhost
 PORT=8080
 
 # install.sh
